@@ -1,0 +1,384 @@
+Documentation:
+The first traces that I received were the runtime traces for the simple subtraction function:
+This application generated six STACK traces:
+USING THIS CODE:
+f1 = open("e1.txt", "r")
+f2 = open("v1.txt", "r")
+ctr = 0
+for line1 in f1:
+    ctr += 1
+    for line2 in f2:
+        if line1 == line2:  
+            print("line ", ctr, ": same")
+        else:
+            print("line ", ctr, ":")
+            print("  "+ "eclipse:", line1)
+            print("  "+ "venus:", line2)
+            print("")
+        break
+    if line1!=line2:
+        print("OOPS")
+        break
+f1.close()                                       
+f2.close()     
+and changing the file names we assured that:
+-the first stack traces file was exactly the same for both machines
+-the second stack traces file was exactly the same for both machines
+-the third stack traces file has line:
+•	12474 different:   
+eclipse: ->push
+venus: ->pop
+•	12476 different:
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12477 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12479 :
+eclipse: ->push
+venus: ->ext_pop
+•	line  12480 :
+eclipse: ->pop
+venus: ->ext_pop
+•	line  12484 :
+  eclipse: ->push
+  venus: ->pop
+•	line  12486 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12487 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12489 :
+  eclipse: ->push
+  venus: ->ext_pop
+
+•	line  12490 :
+  eclipse: ->pop
+  venus: ->ext_pop
+•	line  12494 :
+  eclipse: ->push
+  venus: ->pop
+•	line  12496 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12497 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12499 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12500 :
+  eclipse: ->pop
+  venus: ->ext_pop
+•	line  12516 :
+  eclipse: ->push
+  venus: ->pop
+•	line  12518 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12519 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12516 :
+  eclipse: ->push
+venus: ->pop
+•	line  12518 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12519 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12521 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12522 :
+  eclipse: ->pop
+  venus: ->ext_pop
+•	line  12526 :
+  eclipse: ->push
+  venus: ->pop
+•	line  12528 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12529 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12531 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12532 :
+  eclipse: ->pop
+ venus: ->ext_pop
+•	line  12608 :
+  eclipse: ->push
+  venus: ->pop
+•	line  12610 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12611 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12613 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12614 :
+  eclipse: ->pop
+  venus: ->ext_pop
+•	line  12618 :
+  eclipse: ->push
+  venus: ->pop
+•	line  12620 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12621 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12623 :
+  eclipse: ->push
+  venus: ->ext_pop
+
+•	line  12624 :
+  eclipse: ->pop
+  venus: ->ext_pop
+•	line  12628 :
+  eclipse: ->push
+  venus: ->pop
+•	line  12630 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12631 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12633 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12634 :
+  eclipse: ->pop
+  venus: ->ext_pop
+•	line  12638 :
+  eclipse: ->push
+  venus: ->pop
+•	line  12640 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12641 :
+  eclipse: ->ext_pop
+  venus: ->push
+
+•	line  12643 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12644 :
+  eclipse: ->pop
+  venus: ->ext_pop
+•	line  12648 :
+  eclipse: ->push
+  venus: ->pop
+•	line  12650 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12651 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12653 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12654 :
+  eclipse: ->pop
+  venus: ->ext_pop
+•	line  12658 :
+  eclipse: ->push
+  venus: ->pop
+•	line  12660 :
+  eclipse: ->ext_pop
+  venus: ->push
+
+•	line  12661 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12663 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12664 :
+  eclipse: ->pop
+  venus: ->ext_pop
+•	line  12700 :
+  eclipse: ->pop
+  venus: ->push
+•	line  12702 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12703 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12705 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12706 :
+  eclipse: ->ext_pop
+  venus: ->pop
+•	line  12710 :
+  eclipse: ->pop
+  venus: ->push
+
+•	line  12712 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12713 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12715 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12716 :
+  eclipse: ->ext_pop
+  venus: ->pop
+•	line  12720 :
+  eclipse: ->pop
+  venus: ->push
+•	line  12722 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12723 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12725 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12726 :
+  eclipse: ->ext_pop
+  venus: ->pop
+
+•	line  12730 :
+  eclipse: ->pop
+  venus: ->push
+•	line  12732 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12733 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12735 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12736 :
+  eclipse: ->ext_pop
+  venus: ->pop
+•	line  12772 :
+  eclipse: ->pop
+  venus: ->push
+•	line  12774 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12775 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12777 :
+  eclipse: ->ext_pop
+  venus: ->push
+
+•	line  12778 :
+  eclipse: ->ext_pop
+  venus: ->pop
+•	line  12824 :
+  eclipse: ->pop
+  venus: ->push
+•	line  12826 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12827 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12829 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12830 :
+  eclipse: ->ext_pop
+  venus: ->pop
+•	line  12834 :
+  eclipse: ->pop
+  venus: ->push
+•	line  12836 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12837 :
+  eclipse: ->push
+  venus: ->ext_pop
+
+•	line  12839 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12840 :
+  eclipse: ->ext_pop
+  venus: ->pop
+•	line  12844 :
+  eclipse: ->pop
+  venus: ->push
+•	line  12846 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12847 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12849 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12850 :
+  eclipse: ->ext_pop
+  venus: ->pop
+•	line  12886 :
+  eclipse: ->pop
+  venus: ->push
+•	line  12888 :
+  eclipse: ->push
+  venus: ->ext_pop
+
+•	line  12889 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12891 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12892 :
+  eclipse: ->ext_pop
+  venus: ->pop
+•	line  12896 :
+  eclipse: ->pop
+  venus: ->push
+•	line  12898 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12899 :
+  eclipse: ->push
+  venus: ->ext_pop
+•	line  12901 :
+  eclipse: ->ext_pop
+  venus: ->push
+•	line  12902 :
+  eclipse: ->ext_pop
+  venus: ->pop
+ -the forth stack traces file was exactly the same for both machines
+-the fifth stack traces file was exactly the same for both machines
+-the sixth stack traces file was exactly the same for both machines
+For the runtime traces the traces generated from both traces are the same.
+The second traces that I received were the runtime traces for the fake news detection function:
+This application generated eleven runtime traces:
+-the first runtime traces file were exactly the same for both machines
+-the second runtime traces file were exactly the same for both machines
+-the third runtime traces file were exactly the same for both machines
+-the forth runtime traces file were exactly the same for both machines
+-the fifth runtime traces file were exactly the same for both machines
+-the sixth runtime traces file were exactly the same for both machines
+-the seventh runtime traces file were exactly the same for both machines
+-the eighth runtime traces file were exactly the same for both machines
+-the nineth runtime traces file were exactly the same for both machines
+-the tenth runtime traces file were exactly the same for both machines
+-the eleventh runtime traces file were exactly the same for both machines
+After that Dr. Gowri asked me to compare the runtime traces of all the applications:
+I compared those of the addition function with each of the fake news one:
+For the first runtime trace of the fake news: There was only one difference in the last line:
+lines  6165 :
+  eclipse: ->sub.py-><module>->1->100
+  venus: ->prediction.py-><module>->6->100
+For all other ten files the difference starts from the first line and this is due to the presence of import function.
